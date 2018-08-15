@@ -168,7 +168,7 @@ def find_experiments(*args, **kw):
             for k, v in kw.items():
                 if k not in settings:
                     settings[k] = None
-                if q.iscallable(v):
+                if iscallable(v):
                     incl &= v(settings[k])
                 else:
                     incl &= settings[k] == v
@@ -176,6 +176,10 @@ def find_experiments(*args, **kw):
                     break
             if incl:
                 yield subdir
+
+
+def iscallable(x):
+    return hasattr(x, "__call__")
 
 
 if __name__ == "__main__":
