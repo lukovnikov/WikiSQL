@@ -133,7 +133,7 @@ def get_accuracies(p, verbose=False):
 
 
 def get_avg_accs_of(*args, **kw):
-    """ signature is forward to q.log.find_experiments(*args, **kw) to find matching experiments
+    """ signature is forward to find_experiments(*args, **kw) to find matching experiments
         get_accuracies() is run for every found experiment and the average is returned """
     experiment_dirs = list(find_experiments(*args, **kw))
     accses = [[] for i in range(2)]
