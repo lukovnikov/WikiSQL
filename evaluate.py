@@ -137,7 +137,7 @@ def get_avg_accs_of(*args, **kw):
         get_accuracies() is run for every found experiment and the average is returned """
     experiment_dirs = list(find_experiments(*args, **kw))
     print("{} dirs found matching criteria".format(len(experiment_dirs)))
-    accses = [[] for i in range(2)]
+    accses = [[] for i in range(4)]
     for experiment_dir in experiment_dirs:
         accs = get_accuracies(experiment_dir, verbose=True)
         for acc, accse in zip(accs, accses):
